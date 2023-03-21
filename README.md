@@ -1,24 +1,28 @@
 # Guard::Treetop
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/guard/treetop`. To experiment with that code, run `bin/console` for an interactive prompt.
+A [Guard][guard] plugin to compile [Treetop][treetop] grammar files into Ruby classes.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ bundle add guard-treetop
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+    $ gem install guard-treetop
 
 ## Usage
 
-TODO: Write usage instructions here
+Add a watcher to your Guardfile.
+
+```
+guard :treetop do
+  require "guard/treetop"
+
+  watch(%r{^app/(.+)\.treetop$})
+end
+```
 
 ## Development
 
@@ -37,3 +41,6 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Guard::Treetop project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/guard-treetop/blob/main/CODE_OF_CONDUCT.md).
+
+[guard]: https://github.com/guard/guard
+[treetop]: https://cjheath.github.io/treetop/
